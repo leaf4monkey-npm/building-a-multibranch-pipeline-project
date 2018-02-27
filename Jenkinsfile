@@ -11,9 +11,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                load "externalMethod.groovy"
-                lookAtThis "Steve"
-
                 sh 'yarn install'
             }
         }
