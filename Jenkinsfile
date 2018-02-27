@@ -1,3 +1,4 @@
+def externalMethod = load("externalMethod.groovy")
 pipeline {
     agent {
         docker {
@@ -10,8 +11,6 @@ pipeline {
     }
     stages {
         stage('Build') {
-            def externalMethod = load("externalMethod.groovy")
-            // Call the method we defined in externalMethod.
             steps {
                 externalMethod.lookAtThis("Steve")
 
