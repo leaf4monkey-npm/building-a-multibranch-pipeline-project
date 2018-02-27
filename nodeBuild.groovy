@@ -1,10 +1,5 @@
-pipeline {
-  agent any
-  stages {
-    stage("Inner") {
-      steps {
-        echo "hello from inside"
-      }
-     }
-   }
+stage("Inner") {
+  steps {
+    echo "hello from inside"
+  }
 }
