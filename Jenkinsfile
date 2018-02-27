@@ -11,6 +11,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                def externalMethod = load("externalMethod.groovy")
+                // Call the method we defined in externalMethod.
+                externalMethod.lookAtThis("Steve")
+
                 sh 'yarn install'
             }
         }
