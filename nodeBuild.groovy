@@ -1,17 +1,10 @@
 pipeline {
   agent any
-
   stages {
-    stage('Build') {
+    stage("Inner") {
       steps {
-        sh 'yarn install'
+        echo "hello from inside"
       }
-    }
-  }
-
-  stage('Test') {
-    steps {
-      sh './jenkins/scripts/test.sh'
-    }
-  }
+     }
+   }
 }

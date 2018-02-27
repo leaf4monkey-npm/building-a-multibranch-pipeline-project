@@ -7,9 +7,19 @@ pipeline {
     
   }
   stages {
-    stage('Build & Test') {
+    stage('Build') {
+      steps {
+        sh 'yarn install'
+      }
+    }
+    stage('Load Inner') {
       steps {
         load 'nodeBuild.groovy'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh './jenkins/scripts/test.sh'
       }
     }
     stage('Deliver for development') {
