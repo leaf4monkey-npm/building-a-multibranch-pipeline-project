@@ -8,7 +8,9 @@ pipeline {
   }
   stages {
     stage('Build & Test') {
-      load 'nodeBuild.groovy'
+      steps {
+        load 'nodeBuild.groovy'
+      }
     }
     stage('Deliver for development') {
       when {
