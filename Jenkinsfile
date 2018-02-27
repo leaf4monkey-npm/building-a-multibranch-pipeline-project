@@ -7,16 +7,8 @@ pipeline {
     
   }
   stages {
-    stage('Build') {
-      steps {
-        sh 'yarn install'
-        load 'externalMethod.groovy'
-      }
-    }
-    stage('Test') {
-      steps {
-        sh './jenkins/scripts/test.sh'
-      }
+    stage('Build & Test') {
+      load 'nodeBuild.groovy'
     }
     stage('Deliver for development') {
       when {
