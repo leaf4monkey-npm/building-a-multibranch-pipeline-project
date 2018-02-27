@@ -1,5 +1,1 @@
-stage("Inner") {
-  steps {
-    echo "hello from inside"
-  }
-}
+echo "hello from inside"
