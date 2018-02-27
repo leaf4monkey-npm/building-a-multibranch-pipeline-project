@@ -1,4 +1,3 @@
-def externalMethod = load("externalMethod.groovy")
 pipeline {
     agent {
         docker {
@@ -12,7 +11,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                externalMethod.lookAtThis("Steve")
+                load "externalMethod.groovy"
+                lookAtThis "Steve"
 
                 sh 'yarn install'
             }
