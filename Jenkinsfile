@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'yarn install'
-        readFile(file: 'externalMethod.groovy', encoding: 'UTF-8')
+        load 'externalMethod.groovy'
       }
     }
     stage('Test') {
