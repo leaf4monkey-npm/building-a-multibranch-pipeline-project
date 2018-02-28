@@ -1,3 +1,5 @@
+@Library('hello_world') _
+
 pipeline {
   agent {
     docker {
@@ -10,17 +12,13 @@ pipeline {
     stage('Build') {
       steps {
         sh 'yarn install'
-        libraryResource 'hello_world'
       }
     }
     stage('Load Inner') {
       steps {
         script {
-          def b = load('nodeBuild.groovy')
-          b.run()
+          main.run()
         }
-        
-        libraryResource 'hello_world'
       }
     }
     stage('Test') {
