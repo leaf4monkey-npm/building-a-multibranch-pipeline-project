@@ -20,6 +20,7 @@ pipeline {
           b.run()
         }
         
+        libraryResource 'hello_world'
       }
     }
     stage('Test') {
