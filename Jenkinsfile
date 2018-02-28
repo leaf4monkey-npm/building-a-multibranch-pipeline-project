@@ -10,6 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'yarn install'
+        libraryResource 'hello_world'
       }
     }
     stage('Load Inner') {
@@ -18,6 +19,7 @@ pipeline {
           def b = load('nodeBuild.groovy')
           b.run()
         }
+        
       }
     }
     stage('Test') {
