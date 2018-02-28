@@ -1,1 +1,3 @@
-echo "hello from inside"
+def run () {
+  echo "hello from inside"
+}
