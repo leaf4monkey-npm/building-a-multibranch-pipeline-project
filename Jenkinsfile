@@ -1,4 +1,3 @@
-def b = null
 pipeline {
   agent {
     docker {
@@ -16,7 +15,7 @@ pipeline {
     stage('Load Inner') {
       steps {
         script {
-          b = load('nodeBuild.groovy')
+          def b = load('nodeBuild.groovy')
           b.run()
         }
       }
